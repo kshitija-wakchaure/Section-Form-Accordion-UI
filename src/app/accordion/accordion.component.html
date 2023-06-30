@@ -18,7 +18,7 @@
     </div>
     <div class="col-md-6">
         <p-accordion>
-            <p-accordionTab *ngFor="let section of sections" [header]="section.header">
+            <p-accordionTab *ngFor="let section of sections" >
                 <ng-template pTemplate="header">
                     {{ section.header }}
                 </ng-template>
