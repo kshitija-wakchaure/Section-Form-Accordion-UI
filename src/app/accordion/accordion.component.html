@@ -1,0 +1,31 @@
+
+<!-- accordion.component.html -->
+<div class="row">
+    <div class="col-md-6">
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="sectionHeader">Section Header</label>
+                <input type="text" id="sectionHeader" [(ngModel)]="newSectionHeader" name="newSectionHeader"
+                    class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="sectionDetails">Section Details</label>
+                <textarea id="sectionDetails" [(ngModel)]="newSectionDetails" name="newSectionDetails"
+                    class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <p-accordion>
+            <p-accordionTab *ngFor="let section of sections" [header]="section.header">
+                <ng-template pTemplate="header">
+                    {{ section.header }}
+                </ng-template>
+                <ng-template pTemplate="content">
+                    {{ section.details }}
+                </ng-template>
+            </p-accordionTab>
+        </p-accordion>
+    </div>
+</div>
